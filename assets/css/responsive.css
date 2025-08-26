@@ -1,0 +1,69 @@
+/* PC */
+@media (min-width: 992px) {
+}
+
+/* Table & mobile */
+@media (max-width: 991.98px) {
+  /* 1. ẩn navbar trên tablet và mobile */
+  .navbar {
+    display: none;
+  }
+
+  /* 2. chuyển logo vào giữa */
+  .header-top {
+    position: relative;
+  }
+
+  .header__logo {
+    position: absolute;
+    left: 50%;
+    translate: -50% -50%;
+  }
+
+  /* 3. Căn lại vị trí của menu icon */
+  .menu-header__icon {
+    position: absolute;
+    top: 38px;
+    left: 26px;
+    color: #fff;
+    width: 24px;
+  }
+
+  /* 4.overlay */
+  .menu-overlay {
+    /* là một thuộc tính định vị dùng để cố định vị trí của một phần tử theo khung nhìn (viewport) của trình duyệt. 💻 */
+    position: fixed;
+    background: rgb(0, 0, 0, 0.3);
+    /* cách 0 ở 4 hướng để phủ đều đến tối đa 4 góc */
+    inset: 0;
+    z-index: 1;
+    /* bình thường ẩn overlay đi */
+    opacity: 0;
+    /* ẩn lớp phủ hoàn toàn để có thể dùng những tác vụ bình thường */
+    visibility: hidden;
+    transition: 0.5s;
+  }
+
+  /* 5. kiểm tra nếu check box được check thì hiện overlay */
+  .menu-checkbox:checked ~ .menu-overlay {
+    /* độ mờ bóng của lớp bóng */
+    opacity: 1;
+    /* ẩn và hiện lớp bóng ảnh hưởng đến các nút tác vũ khi ấn vào thanh menu */
+    visibility: visible;
+  }
+}
+
+/* Table */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+}
+
+/* Tạm ẩn không liên quan */
+.hero,
+.footer,
+main {
+  display: none;
+}
